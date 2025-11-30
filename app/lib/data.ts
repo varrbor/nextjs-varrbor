@@ -217,7 +217,3 @@ export async function fetchFilteredCustomers(query: string) {
   }
 }
 
-export async function totalPaidInvoices() {
-  const totalInvoices = allInvoices.length;
-
-}
