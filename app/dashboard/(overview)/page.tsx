@@ -10,6 +10,7 @@ import {
 } from "@/app/ui/skeletons";
 
 export default async function Page() {
+  console.log('huy')
   const {
     totalPaidInvoices,
     totalPendingInvoices,
