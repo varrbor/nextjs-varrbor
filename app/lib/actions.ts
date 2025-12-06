@@ -17,7 +17,7 @@ const FormSchema = z.object({
 
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
-export async function createInvoice(formData: FormData): Promise<void> {
+export async function createInvoice(formData: FormData) {
   const { customerId, amount, status } = CreateInvoice.parse({
     customerId: formData.get("customerId"),
     amount: formData.get("amount"),
@@ -33,15 +33,14 @@ export async function createInvoice(formData: FormData): Promise<void> {
       VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
     `;
   } catch (error) {
+    // We'll also log the error to the console for now
     console.error(error);
-    // handle error differently (e.g. log, throw, or redirect to an error page)
-    return;
+    return ;
   }
 
   revalidatePath("/dashboard/invoices");
   redirect("/dashboard/invoices");
 }
-
 
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
