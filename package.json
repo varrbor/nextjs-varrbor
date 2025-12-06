@@ -28,8 +28,8 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/node": "22.10.7",
-    "@types/react": "19.0.7",
-    "@types/react-dom": "19.0.3",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
     "baseline-browser-mapping": "^2.8.32",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.7",
