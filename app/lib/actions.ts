@@ -33,16 +33,15 @@ export async function createInvoice(formData: FormData): Promise<void> {
       VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
     `;
   } catch (error) {
-    // We'll also log the error to the console for now
     console.error(error);
-    return {
-      message: "Database Error: Failed to Create Invoice.",
-    };
+    // handle error differently (e.g. log, throw, or redirect to an error page)
+    return;
   }
 
   revalidatePath("/dashboard/invoices");
   redirect("/dashboard/invoices");
 }
+
 
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
