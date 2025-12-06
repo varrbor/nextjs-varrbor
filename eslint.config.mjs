@@ -1,12 +1,10 @@
 import prettier from "eslint-config-prettier";
 
-export default [
-  // твої правила Next.js / React
-  {
-    files: ["**/*.{js,ts,jsx,tsx}"],
-    rules: {},
-  },
-
-  // додаємо prettier як останній елемент
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
   prettier,
-];
+]);
+export default eslintConfig;
